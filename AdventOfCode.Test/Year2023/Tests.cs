@@ -76,4 +76,16 @@ public class Tests : BaseTests
             .Should()
             .Be(35349468);
     }
+
+    [Fact]
+    public void Day7()
+    {
+        SolvePartOne<Day7, long>(GetInput<Day7>())
+            .Should()
+            .Be(251106089);
+
+        SolvePartTwo<Day7, long>(GetInput<Day7>())
+            .Should()
+            .Be(249620106);
+    }
 }

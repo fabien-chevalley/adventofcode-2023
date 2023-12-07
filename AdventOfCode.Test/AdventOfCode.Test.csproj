@@ -15,9 +15,13 @@
     <None Remove="Year2023\Inputs\Day4.txt" />
     <None Remove="Year2023\Inputs\Day5.txt" />
     <None Remove="Year2023\Inputs\Day6.txt" />
+    <None Remove="Year2023\Inputs\Day7.txt" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Year2023\Inputs\Day7.txt">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Year2023\Inputs\Day6.txt">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
