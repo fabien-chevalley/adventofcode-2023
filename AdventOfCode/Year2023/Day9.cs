@@ -24,23 +24,11 @@ public class Day9 : ISolver<long>
 
     private static int Reduce(int[] numbers)
     {
-        var accumulator = numbers.Last();
-        var steps = new List<int>(numbers);
-        var nextSteps = new List<int>();
+        if (numbers.All(s => s == 0)) return 0;
 
-        while (steps.Any(s => s != 0))
-        {
-            for (var i = 1; i < steps.Count; i++) nextSteps.Add(steps[i] - steps[i - 1]);
+        var next = new List<int>();
+        for (var i = 1; i < numbers.Length; i++) next.Add(numbers[i] - numbers[i - 1]);
 
-            accumulator += nextSteps.Last();
-
-            if (steps.Any(s => s != 0))
-            {
-                steps = new List<int>(nextSteps);
-                nextSteps = new List<int>();
-            }
-        }
-
-        return accumulator;
+        return numbers.Last() + Reduce(next.ToArray());
     }
 }
