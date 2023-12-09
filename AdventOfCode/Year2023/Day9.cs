@@ -26,9 +26,9 @@ public class Day9 : ISolver<long>
     {
         if (numbers.All(s => s == 0)) return 0;
 
-        var next = new List<int>();
-        for (var i = 1; i < numbers.Length; i++) next.Add(numbers[i] - numbers[i - 1]);
+        var next = new int[numbers.Length - 1];
+        for (var i = 0; i < numbers.Length - 1; i++) next[i] = numbers[i + 1] - numbers[i];
 
-        return numbers.Last() + Reduce(next.ToArray());
+        return numbers[^1] + Reduce(next);
     }
 }
